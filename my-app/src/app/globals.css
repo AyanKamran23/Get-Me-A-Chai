@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.InvertImg{
+filter: invert(0.2);
+}
