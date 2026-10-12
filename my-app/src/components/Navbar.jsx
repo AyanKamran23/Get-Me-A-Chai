@@ -14,7 +14,7 @@ const Navbar = () => {
   //   </>
   // }
   return (
-    <nav className='bg-gray-950 text-white flex justify-between items-center px-3 h-22 flex-col md:flex-row md:h-12 md:px-6'>
+    <nav className='bg-gray-950 text-white flex justify-between items-center pb-1.5 pt-1.5 px-3 h-20 flex-col sm:flex-row sm:h-12 sm:px-6'>
 
       <Link href={"/"}>
         <div className="logo font-bold text-lg flex gap-1">

@@ -57,7 +57,7 @@ export default function Home() {
 
           {/* Main Title with Glow */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight flex items-center justify-center gap-3">
+            <h1 className="text-4xl sm:text-7xl font-extrabold tracking-tight flex items-center justify-center gap-3">
               Get Me a <span className="text-blue-500 drop-shadow-[0_0_25px_rgba(245,158,11,0.4)]">Chai</span><img className="w-18 InvertImg" src="/tea.gif" alt="tea" />
             </h1>
             <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
