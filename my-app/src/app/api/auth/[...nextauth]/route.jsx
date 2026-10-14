@@ -42,7 +42,7 @@ export const authoptions = NextAuth({
       if (account.provider == "github") {
         try {
 
-          const currentUser = await User.findOne({ email: email })
+          const currentUser = await User.findOne({ email: user.email })
           if (!currentUser) {
             const newUser = await User.create({
               email: user.email,
