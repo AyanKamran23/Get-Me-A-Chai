@@ -53,7 +53,6 @@ export const authoptions = NextAuth({
         } catch (error) {
           console.log("Error during sign in:", error.message);
           return false
-          // return true
         }
       }
       return true
