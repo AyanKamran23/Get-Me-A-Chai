@@ -104,25 +104,25 @@ const PaymentPage = ({ username }) => {
             <div className="cover w-full bg-gray-50 relative">
                 <img className='object-cover w-full h-[300]'
                     src={currentUser?.coverpic || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlTIlOGqqAUyGqog_5tbiC5SJ7WQ8zc75xWdlgkVxLcg&s=10"} alt="profile bg" />
-                <div className='absolute left-[46%] -bottom-14 border-white border-3 rounded-full'>
+                <div className='absolute left-1/2 -translate-x-1/2 -bottom-14 border-white border-3 rounded-full'>
                     <img width={120} height={120} className='rounded-full' src={currentUser?.profilepic || "/defaultpfp.png"} alt="" />
                 </div>
             </div>
             <div className="info flex justify-center items-center my-20 flex-col gap-2">
-                <div className="font-bold text-xl">
+                <div className="font-bold text-xl text-center">
                     @{ResolvedUsername}
                 </div>
-                <div className="text-gray-500">
+                <div className="text-gray-500 text-center">
                     Let Help to Get a Chai!
                 </div>
-                <div className="flex gap-2 justify-center text-gray-400 text-sm md:text-base">
+                <div className="flex gap-2 justify-center text-gray-400 text-sm md:text-base flex-wrap text-center">
                     <span>{totalPaymentsCount} Payments</span> .
                     <span>{payments.length} posts</span> .
                     <span>${totalAmount} raised</span>
                 </div>
 
-                <div className="payment flex gap-3 w-[80%] mt-10">
-                    <div className="supporters w-1/2 bg-gray-950 rounded-lg text-white p-10 ">
+                <div className="payment flex gap-6 w-[92%] md:w-[80%] mx-auto mt-10 mb-20 flex-col md:flex-row ">
+                    <div className="supporters w-full md:w-1/2 bg-gray-950 rounded-lg text-white p-6 md:p-10 ">
                         <h2 className='text-2xl font-bold my-5'>Supporters</h2>
                         <ul className='mx-3 '>
                             {payments.length == 0 && <li>No Payments Yet!</li>}
@@ -134,7 +134,7 @@ const PaymentPage = ({ username }) => {
                         </ul>
                     </div>
 
-                    <div className="makepayment w-1/2 bg-gray-950 rounded-lg text-white p-10">
+                    <div className="makepayment w-full md:w-1/2 bg-gray-950 rounded-lg text-white p-6 md:p-10">
                         <h2 className='text-2xl font-bold my-5'>Make a Payment</h2>
                         <div className="flex gap-2 flex-col ">
                             <input type="text" onChange={handlechange} value={paymentform.name || ""} name='name' className='w-full p-2 transition-all duration-300 hover:p-3 hover:border-2 border-gray-300 rounded-lg bg-gray-900 ' placeholder='Enter Name' />
@@ -159,27 +159,27 @@ const PaymentPage = ({ username }) => {
             {/* Easypaisa Payment Modal */}
             {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-                    <div className=" transition  bg-white text-black p-8 rounded-2xl max-w-md w-full shadow-2xl relative border border-gray-100">
+                    <div className=" transition  bg-white text-black p-5 sm:p-8 rounded-2xl max-w-sm w-full shadow-2xl relative border border-gray-100 my-auto">
 
                         {/* Close Cross Button */}
                         <button
                             onClick={() => setShowModal(false)}
-                            className="absolute top-2 right-4 text-gray-400 hover:text-black text-2xl font-light transition-colors"
+                            className="absolute top-2 right-3 text-gray-400 hover:text-black text-xl font-light transition-colors"
                         >
                             &times;
                         </button>
 
                         {/* Top Icon & Title */}
-                        <div className="flex flex-col items-center text-center relative">
-                            <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-600 absolute -top-12">
+                        <div className="flex flex-col items-center text-center relative mt-2">
+                            <div className="w-10 h-10 sm:h-12 sm:w-12 bg-green-50 rounded-full flex items-center justify-center mb-3 text-green-600 absolute -top-12">
                                 {/* QR / Payment Icon */}
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path>
                                 </svg>
                             </div>
 
-                            <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-1 mt-3">Easypaisa Payment</h2>
-                            <p className="text-sm text-gray-500 mb-6">
+                            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900 mb-1 mt-3">Easypaisa Payment</h2>
+                            <p className="text-xs sm:text-sm text-gray-500 mb-6">
                                 Scan this QR code or send <span className="font-semibold text-gray-800">Rs {paymentform.amount}</span> to the account below.
                             </p>
                         </div>
